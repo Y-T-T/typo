@@ -717,9 +717,10 @@ func TestFetchSubcommands_Npm(t *testing.T) {
 		cacheDir:    "",
 		cacheExpiry: 7 * 24 * time.Hour,
 	}
+
 	result := r.fetchSubcommands("npm")
 	if len(result) == 0 {
-		t.Fatalf("Expected npm subcommands")
+		t.Fatalf("Expected npm subcommands, got none")
 	}
 	// List of core commands that MUST exist in any npm version
 	expectedCmds := []string{"install", "config", "test", "publish"}
